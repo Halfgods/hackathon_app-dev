@@ -1,14 +1,17 @@
-// src/App.js
 import React from "react";
-import SignIn from "./SignIn"; // Import your SignIn component
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Auth from "../src/Components/Authentication/Auth.js";
+import Info from "../src/Components/Info/information.js";
+import "../src/App.css";
 const App = () => {
   return (
-    <div>
-      <h1>Welcome to My App</h1>
-      <SignIn />
-    </div>
+    <Router>
+        <Routes>
+          <Route path="/" element={<Auth />} />
+          <Route path="/info" element={<Info />} />
+        </Routes>
+    </Router>
   );
 };
 
-export default App; // Ensure this line is present
+export default App;
